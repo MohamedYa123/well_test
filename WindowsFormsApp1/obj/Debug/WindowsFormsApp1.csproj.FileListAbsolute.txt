@@ -1,0 +1,28 @@
+C:\Users\medo1\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\medo1\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\medo1\source\repos\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\medo1\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Users\medo1\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\medo1\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\medo1\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\medo1\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\medo1\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\medo1\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\medo1\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources
+C:\Users\medo1\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form3.resources
+C:\Users\medo1\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form4.resources
+C:\Users\medo1\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form5.resources
+F:\siege\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+F:\siege\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+F:\siege\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+F:\siege\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+F:\siege\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+F:\siege\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form2.resources
+F:\siege\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form3.resources
+F:\siege\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form4.resources
+F:\siege\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form5.resources
+F:\siege\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+F:\siege\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+F:\siege\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+F:\siege\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+F:\siege\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
