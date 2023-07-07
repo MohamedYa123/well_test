@@ -34,18 +34,23 @@ namespace WindowsFormsApp1
 
         }
        
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog of = new OpenFileDialog();
-            of.Filter = "(*.csv)|*.csv";
-            of.ShowDialog();
-            if (of.FileName != "")
-            {
-                filelocation.Text = of.FileName;
+           
+                OpenFileDialog of = new OpenFileDialog();
+                of.Filter = "(*.csv)|*.csv";
+                of.ShowDialog();
+                if (of.FileName != "")
+                {
+                    filelocation.Text = of.FileName;
 
-                string text = File.ReadAllText(filelocation.Text, Encoding.UTF8);
-                readcsv(text);
-            }
+                    string text = File.ReadAllText(filelocation.Text, Encoding.UTF8);
+               // await Task.Run(() =>
+                {
+                   await readcsv(text);
+                }
+                }
+            
         }
         bool show = true;
         List<double> sdata = new List<double>();
@@ -142,7 +147,7 @@ namespace WindowsFormsApp1
         List<decimal> ts = new List<decimal>();
         List<decimal> pwfs = new List<decimal>();
 
-        private void readcsv(string data)
+        private async Task readcsv(string data)
         {
             ts.Clear();
             pwfs.Clear();
@@ -160,38 +165,44 @@ namespace WindowsFormsApp1
                 dg.HeaderText = columns[i];
                 dataGridView1.Columns.Add(dg);
             }
-            for (int i = 1; i < d.Length; i++)
+            List<DataGridViewRow> drs = new List<DataGridViewRow>();
+           await  Task.Run(() =>
             {
-                DataGridViewRow dr = new DataGridViewRow();
-                var cells = d[i].Split(';');
-                if (cells[0] != "")
+               
+                for (int i = 1; i < d.Length; i++)
                 {
-                    for (int i2 = 0; i2 < cells.Length; i2++)
-                {
-                    DataGridViewCell dc = new DataGridViewTextBoxCell();
-                    dc.Value = cells[i2];
-                    dr.Cells.Add(dc);
-                    if (i2 == 0)
+                    DataGridViewRow dr = new DataGridViewRow();
+                    var cells = d[i].Split(';');
+                    if (cells[0] != "")
                     {
-                        ts.Add(Convert.ToDecimal(cells[i2]));
-                    }
-                    else if(i2==1)
-                    {
-                        pwfs.Add(Convert.ToDecimal(cells[i2]));
+                        for (int i2 = 0; i2 < cells.Length; i2++)
+                        {
+                            DataGridViewCell dc = new DataGridViewTextBoxCell();
+                            dc.Value = cells[i2];
+                            dr.Cells.Add(dc);
+                            if (i2 == 0)
+                            {
+                                ts.Add(Convert.ToDecimal(cells[i2]));
+                            }
+                            else if (i2 == 1)
+                            {
+                                pwfs.Add(Convert.ToDecimal(cells[i2]));
+                            }
+                        }
+                        drs.Add(dr);
+
                     }
                 }
-                
-                dataGridView1.Rows.Add(dr);
-                   }
-            }
+            });
+            dataGridView1.Rows.AddRange(drs.ToArray());
         }
         private void button2_Click(object sender, EventArgs e)
         {
             Form2 f = new Form2();
-            readcsv(File.ReadAllText(filelocation.Text, Encoding.UTF8));
-            f.ts = ts;
-            f.pwfs = pwfs;
-            f.data = data;
+            //readcsv(File.ReadAllText(filelocation.Text, Encoding.UTF8));
+            f.ts = ts.ToList();
+            f.pwfs = pwfs.ToList();
+            f.data = data.ToList();
             f.semilog = checkBox1.Checked;
             f.method = (comboBox1.SelectedIndex+1) * testtype.SelectedIndex;
             if (sdata[9] == 0 && (comboBox1.SelectedIndex + 1) * testtype.SelectedIndex > 0)
@@ -203,7 +214,11 @@ namespace WindowsFormsApp1
             }
             else
             {
-                f.Show();
+                try
+                {
+                    f.Show();
+                }
+                catch { }
             }
             
         }

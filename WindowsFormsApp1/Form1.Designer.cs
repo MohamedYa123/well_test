@@ -83,13 +83,13 @@ namespace WindowsFormsApp1
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.GridColor = System.Drawing.Color.Turquoise;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 30);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 28);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(782, 572);
+            this.dataGridView1.Size = new System.Drawing.Size(782, 574);
             this.dataGridView1.TabIndex = 2;
             // 
             // panel2
@@ -97,10 +97,10 @@ namespace WindowsFormsApp1
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(782, 30);
+            this.panel2.Location = new System.Drawing.Point(782, 28);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(353, 572);
+            this.panel2.Size = new System.Drawing.Size(353, 574);
             this.panel2.TabIndex = 0;
             // 
             // panel3
@@ -116,7 +116,7 @@ namespace WindowsFormsApp1
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(353, 572);
+            this.panel3.Size = new System.Drawing.Size(353, 574);
             this.panel3.TabIndex = 1;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -160,7 +160,7 @@ namespace WindowsFormsApp1
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Location = new System.Drawing.Point(14, 251);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(89, 21);
+            this.checkBox1.Size = new System.Drawing.Size(86, 20);
             this.checkBox1.TabIndex = 12;
             this.checkBox1.Text = "Semi Log";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -266,7 +266,7 @@ namespace WindowsFormsApp1
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Sitka Display", 16.2F, System.Drawing.FontStyle.Bold);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(43, 430);
+            this.button2.Location = new System.Drawing.Point(43, 432);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(277, 44);
@@ -280,7 +280,7 @@ namespace WindowsFormsApp1
             // 
             this.panel6.BackColor = System.Drawing.Color.LightSeaGreen;
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(43, 474);
+            this.panel6.Location = new System.Drawing.Point(43, 476);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(277, 98);
@@ -293,7 +293,7 @@ namespace WindowsFormsApp1
             this.panel5.Location = new System.Drawing.Point(320, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(33, 572);
+            this.panel5.Size = new System.Drawing.Size(33, 574);
             this.panel5.TabIndex = 5;
             // 
             // panel4
@@ -303,7 +303,7 @@ namespace WindowsFormsApp1
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(43, 572);
+            this.panel4.Size = new System.Drawing.Size(43, 574);
             this.panel4.TabIndex = 4;
             // 
             // menuStrip1
@@ -313,7 +313,7 @@ namespace WindowsFormsApp1
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1135, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1135, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -322,7 +322,7 @@ namespace WindowsFormsApp1
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 26);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem

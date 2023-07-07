@@ -48,8 +48,9 @@ namespace WindowsFormsApp1
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(1059, 590);
             this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "App Created By : Mohamed Yasser \r\nFor Contact : Mohamed.Yeat@pme.suezuni.edu.eg\r\n" +
-    "@\r\nFaculty of petoleum and mining engineering\r\nSuez University";
+            this.textBox1.Text = "App Created By :\r\n    Mohamed Yasser Ebrahim Attwa\r\n    Mohamed Hmady Mohamed Neg" +
+    "m\r\nFor Contact : Mohamed.Yeat@pme.suezuni.edu.eg\r\n@\r\nFaculty of petoleum and min" +
+    "ing engineering\r\nSuez University\r\n\r\n\r\n";
             // 
             // pictureBox1
             // 

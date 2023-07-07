@@ -48,12 +48,13 @@ namespace WindowsFormsApp1
         }
         List<double> pwf1 = new List<double>();
         List<double> ts1 = new List<double>();
-        private void setline(double forgivenes,double start)
+        private void setline(double forgivenes,double start,double end)
         {
             pwf1.Clear();
             ts1.Clear();
             double slope = 0.0;
             double err = 0.0;
+            forgivenes = double.MaxValue;
             for (int i = 0; i < pwf.Count-1; i++)
             {
                 double r = Convert.ToDouble(tss[i]);
@@ -73,12 +74,17 @@ namespace WindowsFormsApp1
                     slope = tslope;
 
                 }
+                if (slope == 0)
+                {
 
+                }
                 {
                     err =Math.Abs((slope - tslope) / slope);
-                    if ((err<= forgivenes && Convert.ToDouble(tsm[i])>= start)|| Convert.ToDouble(tsm[i]) == start)
+                    var d = tsm[i];
+                    var pws = pwf[i];
+                    if (((Convert.ToDouble(tsm[i])>= start)|| Convert.ToDouble(tsm[i]) == start)&& tsm[i]<=end)
                     {
-
+                       
                         pwf1.Add(Convert.ToDouble(pwf[i]));
                         ts1.Add(r);
                         if (i == pwf.Count - 2) {
@@ -89,7 +95,14 @@ namespace WindowsFormsApp1
                     else if(Convert.ToDouble(tsm[i]) > start){
                         break;
                     }
-                    slope = tslope;
+                    else
+                    {
+
+                    }
+                    if (tslope != 0)
+                    {
+                        slope = tslope;
+                    }
 
                 }
             }
@@ -100,50 +113,120 @@ namespace WindowsFormsApp1
             double y = 0.0;
             double x = 0.0;
             double real = 0.0;
+            var gg = pwf1[pwf1.Count - 1];
             for(int i = 0; i < pwf1.Count; i++)
             {
                 x = Convert.ToDouble(ts1[i]);
                 real = Convert.ToDouble(pwf1[i]);
                 y = m * x + b;
-                err += Math.Abs((real - y) / real);
+                err += Math.Pow((real - y),2 );// real
             }
             return err/pwf1.Count;
+        }
+        double bb = 0;
+        double getb(double m)
+        {
+            double b = 0.0;
+            for (int i = 0; i < pwf1.Count; i++)
+            {
+                b += pwf1[i] - m * ts1[i];
+                //b += (pwf1[i] - pwf1[i + 1]) / (ts1[i] - ts1[i + 1]);
+
+            }
+            b /= pwf1.Count;
+            bb = b;
+            return bb;
+        }
+        double getslope()
+        {
+            double m= 0.0;
+            double xavg = 0;
+            for(int i = 0; i < ts1.Count; i++)
+            {
+                xavg += ts1[i];
+            }
+            xavg /= ts1.Count;
+            double yavg = 0;
+            for(int i = 0; i < pwf1.Count; i++)
+            {
+                yavg += pwf1[i];
+            }
+            yavg /= pwf1.Count;
+            double topm = 0;
+            double downm = 0;
+            for(int i=0;i< pwf1.Count; i++)
+            {
+                double xi = ts1[i];
+                double yi = pwf1[i];
+                topm += (xi - xavg)*(yi - yavg);
+                downm += Math.Pow(xi - xavg, 2);
+            }
+            m= topm/downm;
+            bb = yavg - m * xavg;
+            return m;
         }
         private double linegenerator(double maximumsteps)
         {
             int step = 0;
-            double first = -10000;
-            double second = 10000;
+            
             double ferr = 0.0;
             double lerr = 0.0;
             double avgerr = 0.0;
             double b = 0.0;
+            var mm=getslope();
+            
+            ferr= calcerr(bb, mm);
+            return mm;
+            double minslope = -50000;
+            double maxslope = 50000;
+            double first = maxslope;
+            double second = minslope;
+            //return mm;
             while (step < maximumsteps)
             {
                 double m = first;
                 double y = Convert.ToDouble(pwf1[0]);
                 double x = Convert.ToDouble(ts1[0]);
                 b = y - m * x;
+                b=getb(m);
                 ferr = calcerr(b, m);
                 //
                 m = second;
                 y = Convert.ToDouble(pwf1[0]);
                 x = Convert.ToDouble(ts1[0]);
                 b = y - m * x;
+                b = getb(m);
                 lerr = calcerr(b, m);
                 //
                 m = (first+second)/2;
                 y = Convert.ToDouble(pwf1[0]);
                 x = Convert.ToDouble(ts1[0]);
                 b = y - m * x;
+                b = getb(m);
                 avgerr = calcerr(b, m);
                 if (ferr > lerr)
                 {
-                    first = m;
+                    if (m <= maxslope && m >= minslope)
+                    {
+                         first = m;
+                    }
                 }
                 else
                 {
-                    second = m;
+                    if (m <= maxslope && m >= minslope)
+                    { 
+                      second = m;
+                    }
+                }
+                var dr = Math.Max(ferr, lerr);
+                var drm=Math.Max(dr, avgerr);
+                if (ferr == drm)
+                {
+                //    first = first;
+                    if (lerr < avgerr)
+                    {
+                        
+                    }
                 }
                 step++;
             }
@@ -194,6 +277,8 @@ namespace WindowsFormsApp1
             chart1.ChartAreas["ChartArea1"].AxisY.Title = "Pwf(psia)";
             chart1.ChartAreas["ChartArea1"].AxisY.TitleFont = new Font("Arial", 12, FontStyle.Bold);
             chart1.ChartAreas["ChartArea1"].AxisX.TitleFont = new Font("Arial", 12, FontStyle.Bold);
+            var dx = pwf.Count / 1000;
+            dx = Math.Max(dx, 1);
             for (int i = 0; i < pwf.Count; i++)
             {
                 double vv = 0.0;
@@ -203,22 +288,37 @@ namespace WindowsFormsApp1
                     vv = Math.Log10(vv);
                 }
                 vv = Math.Round(vv, 4);
-                chart1.Series["Series1"].Points.AddXY(vv, pwf[i]);
+                if (i % dx == 0)
+                {
+                    chart1.Series["Series1"].Points.AddXY(vv, pwf[i]);
+                }
             }
         }
         double sb = 0.0;
         double sm = 0.0;
         double tp = 0;
         List<double> tsm = new List<double>();
+        double t;
         private void methodcollector()
         {
             if (method == 1)
             {
                 tp = sdata[9];
+                t = sdata[8];
                 for(int i = 0; i < ts.Count; i++)
                 {
                     tsm.Add(Convert.ToDouble(ts[i]));
-                    ts[i] = (Convert.ToDecimal(tp) + ts[i]) / ts[i];
+                    if (ts[i] > (decimal)38.45)
+                    {
+                        var g = ts[i];
+                    }
+                    if (ts[i] > (decimal)t)
+                    {
+                        var x = (Convert.ToDecimal(tp) + ts[i] - (decimal)t) / (ts[i] - (decimal)t);
+                        ts[i] =x;
+                        
+                        
+                    }
 
                 }
             }
@@ -254,26 +354,35 @@ namespace WindowsFormsApp1
         {
             try
             {
-                setline(Convert.ToDouble(numericUpDown1.Value), Convert.ToDouble(numericUpDown4.Value));
-                double m = linegenerator(1000);
+                setline(Convert.ToDouble(numericUpDown1.Value), Convert.ToDouble(numericUpDown4.Value), Convert.ToDouble(numericUpDown5.Value));
+                double m = linegenerator(3000);
+                //m = 0.4;
                 double b = Convert.ToDouble(pwf1[0]) - m * Convert.ToDouble(Convert.ToDouble(ts1[0]));
                 sm = m;
+                b=getb(m);
                 sb = b;
                 label4.Text = "Y = " + Convert.ToString(Math.Round(m, 4)) + " X + " + Convert.ToString(Math.Round(b, 4));
                 label5.Text = "\nnumber of points satisfied\nthe conditions : " + pwf1.Count+"\nerror:"+ Math.Round(calcerr(b, m)*100,3)+"%" ;
                 //
                 chart1.Series["Trend line"].Points.Clear();
+                var dx = pwf.Count / 1000;
+                dx = Math.Max(dx, 1);
                 for (int i = 0; i < pwf.Count; i++)
                 {
-                    double x = Convert.ToDouble(Convert.ToDouble( tss[i]));
-                    x = Convert.ToDouble(tss[i]);
-                    if (semilog)
+                    if (i % dx == 0)
                     {
-                        x = Math.Log10(x);
+                        double x = Convert.ToDouble(Convert.ToDouble(tss[i]));
+                        x = Convert.ToDouble(tss[i]);
+                        if (semilog)
+                        {
+                            x = Math.Log10(x);
+                        }
+
+                        double p = m * x + b;
+                        x = Math.Round(x, 4);
+
+                        chart1.Series["Trend line"].Points.AddXY(x, p);
                     }
-                    double p = m * x + b;
-                    x = Math.Round(x, 4);
-                    chart1.Series["Trend line"].Points.AddXY(x, p);
                 }
                 label6.Show();
             }

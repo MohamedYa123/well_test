@@ -1,0 +1,15 @@
+G:\projects\C# Projects\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\bin\Release\WindowsFormsApp1.exe.config
+G:\projects\C# Projects\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\bin\Release\WindowsFormsApp1.exe
+G:\projects\C# Projects\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\bin\Release\WindowsFormsApp1.pdb
+G:\projects\C# Projects\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\obj\Release\WindowsFormsApp1.csproj.AssemblyReference.cache
+G:\projects\C# Projects\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\obj\Release\WindowsFormsApp1.csproj.SuggestedBindingRedirects.cache
+G:\projects\C# Projects\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\obj\Release\WindowsFormsApp1.Form1.resources
+G:\projects\C# Projects\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\obj\Release\WindowsFormsApp1.Form2.resources
+G:\projects\C# Projects\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\obj\Release\WindowsFormsApp1.Form3.resources
+G:\projects\C# Projects\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\obj\Release\WindowsFormsApp1.Form4.resources
+G:\projects\C# Projects\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\obj\Release\WindowsFormsApp1.Form5.resources
+G:\projects\C# Projects\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\obj\Release\WindowsFormsApp1.Properties.Resources.resources
+G:\projects\C# Projects\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\obj\Release\WindowsFormsApp1.csproj.GenerateResource.cache
+G:\projects\C# Projects\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\obj\Release\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+G:\projects\C# Projects\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\obj\Release\WindowsFormsApp1.exe
+G:\projects\C# Projects\well test\ويل تيست - هندسة بترول\WindowsFormsApp1\obj\Release\WindowsFormsApp1.pdb

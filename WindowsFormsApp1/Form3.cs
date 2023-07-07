@@ -83,8 +83,11 @@ namespace WindowsFormsApp1
             double phr1 = 0;
             double ri = 0;
             phr1 = m * 1 + b;
+            //pi = 2889;
             double j = Math.Log(k / (fay * mu * ct * rw * rw));
-            s = 1.151 * ((pi - phr1) / Math.Abs(m) - Math.Log(k / (fay * mu * ct * rw * rw)) + 3.23);
+            var vv = Math.Log10(k / (fay * mu * ct * rw * rw));
+            var z = (phr1 - pi) / Math.Abs(m);
+            s = 1.151 * ( z- vv + 3.23);
             ri = Math.Sqrt(k*t/(948*fay*mu*ct) );
 
             textBox1.Text += "\r\n k=" + k+" md";

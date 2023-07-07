@@ -51,6 +51,8 @@ namespace WindowsFormsApp1
             this.button2 = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -59,6 +61,7 @@ namespace WindowsFormsApp1
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
             this.SuspendLayout();
             // 
             // chart1
@@ -95,6 +98,8 @@ namespace WindowsFormsApp1
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.numericUpDown5);
+            this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.numericUpDown3);
             this.panel3.Controls.Add(this.label6);
@@ -116,16 +121,16 @@ namespace WindowsFormsApp1
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 169);
+            this.label7.Location = new System.Drawing.Point(13, 232);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 17);
+            this.label7.Size = new System.Drawing.Size(69, 16);
             this.label7.TabIndex = 11;
             this.label7.Text = "minmum x:";
             // 
             // numericUpDown3
             // 
             this.numericUpDown3.DecimalPlaces = 3;
-            this.numericUpDown3.Location = new System.Drawing.Point(109, 167);
+            this.numericUpDown3.Location = new System.Drawing.Point(107, 230);
             this.numericUpDown3.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -201,16 +206,16 @@ namespace WindowsFormsApp1
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(17, 106);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 17);
+            this.label3.Size = new System.Drawing.Size(75, 16);
             this.label3.TabIndex = 6;
             this.label3.Text = "begin time :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 141);
+            this.label2.Location = new System.Drawing.Point(15, 204);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 17);
+            this.label2.Size = new System.Drawing.Size(76, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "minimum y :";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -218,7 +223,7 @@ namespace WindowsFormsApp1
             // numericUpDown2
             // 
             this.numericUpDown2.DecimalPlaces = 3;
-            this.numericUpDown2.Location = new System.Drawing.Point(111, 139);
+            this.numericUpDown2.Location = new System.Drawing.Point(109, 202);
             this.numericUpDown2.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -239,7 +244,7 @@ namespace WindowsFormsApp1
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(15, 65);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 17);
+            this.label1.Size = new System.Drawing.Size(124, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Forgiveness value :";
             // 
@@ -302,6 +307,33 @@ namespace WindowsFormsApp1
             this.panel2.Size = new System.Drawing.Size(803, 602);
             this.panel2.TabIndex = 2;
             // 
+            // numericUpDown5
+            // 
+            this.numericUpDown5.DecimalPlaces = 3;
+            this.numericUpDown5.Location = new System.Drawing.Point(109, 144);
+            this.numericUpDown5.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numericUpDown5.Name = "numericUpDown5";
+            this.numericUpDown5.Size = new System.Drawing.Size(145, 22);
+            this.numericUpDown5.TabIndex = 13;
+            this.numericUpDown5.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(17, 149);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(65, 16);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "End time :";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -323,6 +355,7 @@ namespace WindowsFormsApp1
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -347,5 +380,7 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown numericUpDown5;
+        private System.Windows.Forms.Label label8;
     }
 }
